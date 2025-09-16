@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Medium Mode!</title>
+        <style>
+            body {
+                text-align: center;
+                font-family: 'minecraftia', 'consolas', monospace;
+            }
+        </style>
+    </head>
+    <body style="background-color: black; color: white;">
+        <h1>Medium Mode!</h1>
+        <hr>
+        <p>Welcome to medium mode. Still, the control is in your hands, and you can click the</p>
+        <p>Checkbox when you want. This is similar to mild mode, only with no smooth transitions...</p>
+        <p>Good luck!</p>
+        <hr>
+        <label for="chkbox" style="font-size: 1.5em; display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 60px;">
+        <input type="checkbox" id="chkbox" onchange="change()" checked style="transform: scale(2);">
+        Dark Mode
+        </label>
+        <br>
+        <a href="index.html" style="color: #888888">Back to Homepage</a>
+
+        <script>
+            const body = document.querySelector("body");
+            function change() {
+                let bgcolor = body.style.backgroundColor;
+                let textcolor = body.style.color;
+                bgcolor === "white" ? body.style.backgroundColor = "black" : body.style.backgroundColor = "white";
+                textcolor === "black" ? body.style.color = "white" : body.style.color = "black"
+            }
+        </script>
+    </body>
+</html>

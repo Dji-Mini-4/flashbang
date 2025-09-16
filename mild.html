@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mild Mode!</title>
+        <style>
+            body {
+                transition: background-color 0.5s ease, color 0.5s ease;
+                text-align: center;
+                font-family: 'minecraftia', 'consolas', monospace;
+            }
+        </style>
+    </head>
+    <body style="background-color: black; color: white;">
+        <h1>Mild Mode!</h1>
+        <hr>
+        <p>Here's mild mode. It's smooth transition between black and white.</p>
+        <p>You can choose to change the color anytime, unlike Insane Mode... :|</p>
+        <p>Okay, no wasting time, the trigger is right there! Pull to get started...</p>
+        <hr>
+        <label for="chkbox" style="font-size: 1.5em; display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 60px;">
+        <input type="checkbox" id="chkbox" onchange="change()" checked style="transform: scale(2);">
+        Dark Mode
+        </label>
+        <br>
+        <a href="index.html" style="color: #888888">Back to Homepage</a>
+
+        <script>
+            const body = document.querySelector("body");
+            function change() {
+                let bgcolor = body.style.backgroundColor;
+                let textcolor = body.style.color;
+                bgcolor === "white" ? body.style.backgroundColor = "black" : body.style.backgroundColor = "white";
+                textcolor === "black" ? body.style.color = "white" : body.style.color = "black"
+            }
+        </script>
+    </body>
+</html>

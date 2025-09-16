@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Insane Mode!</title>
+        <style>
+            body {
+                text-align: center;
+                font-family: 'minecraftia', 'consolas', monospace;
+                background-color: black;
+                color: white;
+            }
+            #start {
+                transform: scale(2);
+                margin-top: 20px;
+                margin-bottom: 30px;
+                border-radius: 20px;
+                font-family: 'Inconsolata', 'consolas', monospace
+            }
+            a {
+                bottom: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Insane Mode...</h1>
+        <hr>
+        <p>Oh, so you dared to come to this page! Then you're doomed... (At least after you press Start)</p>
+        <p>Now, the control isn't in your hands! Fortunately, there are a Back To Homepage link that would save your eye...</p>
+        <p>[The button can also stop the chaos though so what's the use of the link? :)]</p>
+        <p>Now, really, <i>Good luck...</i></p>
+        <hr>
+
+        <button id="start" onclick="change()" style="background-color: #888">Start (⚠️)</button>
+        <br>
+        <a href="index.html" style="color: #888888; margin-top: 30px;">Back to Homepage</a>
+
+        <script>
+            let clicked = false;
+            let intervalId = null;
+            function change() {
+                const button = document.querySelector("#start");
+                button.textContent === "Start (⚠️)" 
+                  ? button.textContent = "***STOP***" 
+                  : button.textContent = "Start (⚠️)";
+                clicked = !clicked;
+
+                if (clicked) {
+                intervalId = setInterval(() => {
+                    let body = document.body;
+                    let bg = getComputedStyle(body).backgroundColor;
+                    let text = getComputedStyle(body).color;
+
+                    body.style.backgroundColor = bg === "rgb(0, 0, 0)" ? "white" : "black";
+                    body.style.color = text === "rgb(255, 255, 255)" ? "black" : "white";
+                }, 300);
+                } else {
+                    clearInterval(intervalId);
+                    body.style.backgroundColor = "rgb(0,0,0)";
+                    body.style.color = "rgb(255,255,255)";
+                }
+            }
+        </script>
+    </body>
+</html>
