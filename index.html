@@ -3,6 +3,7 @@
 <head>
     <title>Flashbang</title>
     <link rel="ico" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             text-align: center;
@@ -23,13 +24,22 @@
         .highlight {
             color: aqua;
         }
+        @media (max-width: 800px) {
+            #buttons {
+                flex-direction: column;
+                align-items: center;
+                transform: scale(1.2);
+            }
+            body {
+                transform: scale(1.05);
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to <i>Flashbang!</i></h1>
     <hr>
-    <p>In this game, there are three modes that include different types of</p>
-    <p>Flashing pages.</p>
+    <p>In this game, there are three modes that include different types of Flashing Pages.</p>
     <p>Don't worry, it would not start right after you click into it...</p>
     <p>Who dares to enter <a href="insane.html" class="highlight">Insane Mode?</a></p>
     <p>Try not to wear a sunglass :)</p>
@@ -37,9 +47,9 @@
     <p>Have fun!</p>
     <hr>
     <div id="buttons">
-        <button><a href="mild.html">Mild Mode</a></button>
-        <button><a href="med.html">Medium Mode</a></button>
-        <button><a href="insane.html">Insane Mode ⚠️⚠️⚠️</a></button>
+        <button id="mild"><a href="mild.html">Mild Mode</a></button>
+        <button id="med"><a href="med.html">Medium Mode</a></button>
+        <button id="insane"><a href="insane.html">Insane Mode ⚠️⚠️⚠️</a></button>
     </div>
     <br>
     <a class="highlight" href="https://dji-mini-4.github.io/cant-click-me" target="_blank">Try my other webgame!</a>
